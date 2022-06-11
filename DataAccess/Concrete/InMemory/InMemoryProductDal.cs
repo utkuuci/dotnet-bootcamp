@@ -4,6 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using DataAccess.Abstract;
 using Entity.Concrete;
+using Entity.DTOs;
 
 namespace DataAccess.Concrete.InMemory
 {
@@ -45,6 +46,11 @@ namespace DataAccess.Concrete.InMemory
                 return _products;
             }
             return _products;
+        }
+
+        public List<ProductDetailDto> GetProductDetails()
+        {
+            throw new NotImplementedException();
         }
 
         public void Update(Product entity)

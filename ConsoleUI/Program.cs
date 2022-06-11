@@ -10,11 +10,20 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            Prod();
-            Cat();
-            Ord();
+            // Prod();
+            // Cat();
+            // Ord();
+            // DTO => Data Transformation Object
+            ProductTest();
         }
-
+        private static void ProductTest()
+        {
+            ProductManager productManager = new ProductManager(new EfProductDal());
+            foreach (var p in productManager.GetProductDetails())
+            {
+                Console.WriteLine(p.ProductName + "\t" + p.CategoryName);
+            }
+        }
         private static void Prod()
         {
             ProductManager productManager = new ProductManager(new EfProductDal());
