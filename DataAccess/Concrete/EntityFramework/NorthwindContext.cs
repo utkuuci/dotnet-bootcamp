@@ -9,7 +9,7 @@ namespace DataAccess.Concrete.EntityFramework
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=127.0.0.1,1433; Database=Northwind; User Id=SA; Password=tokat@190360");
+            optionsBuilder.UseSqlServer(@"Server=127.0.0.1,1433; Database=Northwind; User Id=SA; Password=<password>");
         }
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
