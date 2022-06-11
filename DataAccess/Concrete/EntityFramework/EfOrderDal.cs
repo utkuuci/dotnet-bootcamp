@@ -5,6 +5,6 @@ using Entity.Concrete;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class OrderDal : EfEntityRepositoryBase<Order, NorthwindContext>, IOrderDal
+    public class EfOrderDal : EfEntityRepositoryBase<Order, NorthwindContext>, IOrderDal
     { }
 }

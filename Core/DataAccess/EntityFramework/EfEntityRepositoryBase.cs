@@ -58,10 +58,5 @@ namespace Core.DataAccess.EntityFramework
                 context.SaveChanges();
             }
         }
-
-        List<TEntity> IEntityRepository<TEntity>.GetAll(Expression<Func<TEntity, bool>> filter)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
