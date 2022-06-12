@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Business.Abstract;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entity.Concrete;
 using Entity.DTOs;
@@ -33,6 +34,17 @@ namespace Business.Concrete
         public List<ProductDetailDto> GetProductDetails()
         {
             return _productDal.GetProductDetails();
+        }
+
+        public Product GetById(int productId)
+        {
+            return _productDal.Get(p => p.ProductId == productId);
+        }
+
+        public IResult Add(Product product)
+        {
+            _productDal.Add(product);
+            return new SuccessResult("Urun Eklendi");
         }
     }
 }
