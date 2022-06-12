@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Business.Abstract;
+using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entity.Concrete;
@@ -16,35 +17,73 @@ namespace Business.Concrete
         {
             _productDal = productDal;
         }
-        public List<Product> GetAll()
+
+        public IDataResult<IResult> Add(Product product)
         {
-            return _productDal.GetAll();
+            throw new NotImplementedException();
         }
 
-        public List<Product> GetByUnitPrice(decimal min, decimal max)
+        public IDataResult<List<Product>> GetAll()
         {
-            return _productDal.GetAll(p => p.UnitPrice >= min && p.UnitPrice <= max);
+            throw new NotImplementedException();
         }
 
-        public List<Product> GetAllByCategoryId(int categoryId)
+        public IDataResult<List<Product>> GetAllByCategoryId(int categoryId)
         {
-            return _productDal.GetAll(p => p.CategoryId == categoryId);
-        }
-
-        public List<ProductDetailDto> GetProductDetails()
-        {
-            return _productDal.GetProductDetails();
+            throw new NotImplementedException();
         }
 
         public Product GetById(int productId)
         {
-            return _productDal.Get(p => p.ProductId == productId);
+            throw new NotImplementedException();
         }
 
-        public IResult Add(Product product)
+        public IDataResult<List<Product>> GetByUnitPrice(decimal min, decimal max)
         {
-            _productDal.Add(product);
-            return new SuccessResult("Urun Eklendi");
+            throw new NotImplementedException();
         }
+
+        public IDataResult<List<ProductDetailDto>> GetProductDetails()
+        {
+            throw new NotImplementedException();
+        }
+        // public IDataResult<List<Product>> GetAll()
+        // {
+        //     if (DateTime.Now.Hour == 22)
+        //     {
+        //         return new ErrorDataResult<List<Product>>(Message.MaintenanceTime);
+        //     }
+        //     return new SuccessDataResult<List<Product>>(_productDal.GetAll(), Message.ProductListed);
+        // }
+
+        // public IDataResult<List<Product>> GetByUnitPrice(decimal min, decimal max)
+        // {
+        //     return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.UnitPrice >= min && p.UnitPrice <= max), Message.ProductListed);
+        // }
+
+        // public IDataResult<List<Product>> GetAllByCategoryId(int categoryId)
+        // {
+        //     return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.CategoryId == categoryId), Message.ProductListed);
+        // }
+
+        // public IDataResult<List<ProductDetailDto>> GetProductDetails()
+        // {
+        //     return new SuccessDataResult<List<ProductDetailDto>>(_productDal.GetProductDetails(), Message.ProductListed);
+        // }
+
+        // public IDataResult<Product> GetById(int productId)
+        // {
+        //     return new SuccessDataResult<Product>(_productDal.Get(p => p.ProductId == productId), Message.ProductFetched);
+        // }
+
+        // public IResult Add(Product product)
+        // {
+        //     if (product.ProductName.Length < 2)
+        //     {
+        //         return new ErrorResult(Message.ProductInvalid);
+        //     }
+        //     _productDal.Add(product);
+        //     return new SuccessResult(Message.ProductAdded);
+        // }
     }
 }
