@@ -2,5 +2,5 @@
     "editor.fontFamily": "'Cascadia Code'",
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "ms-dotnettools.csharp",
-    "workbench.colorTheme": "One Dark Pro Flat"
+    "workbench.colorTheme": "Default Dark+"
 }

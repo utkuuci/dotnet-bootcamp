@@ -19,7 +19,7 @@ namespace ConsoleUI
         private static void ProductTest()
         {
             ProductManager productManager = new ProductManager(new EfProductDal());
-            foreach (var p in productManager.GetProductDetails())
+            foreach (var p in productManager.GetProductDetails().Data)
             {
                 Console.WriteLine(p.ProductName + "\t" + p.CategoryName);
             }
@@ -27,17 +27,17 @@ namespace ConsoleUI
         private static void Prod()
         {
             ProductManager productManager = new ProductManager(new EfProductDal());
-            foreach (var p in productManager.GetAll())
+            foreach (var p in productManager.GetAll().Data)
             {
                 Console.WriteLine(p.ProductName);
             }
             Console.WriteLine("======================================");
-            foreach (var p in productManager.GetAllByCategoryId(6))
+            foreach (var p in productManager.GetAllByCategoryId(6).Data)
             {
                 Console.WriteLine(p.ProductName);
             }
             Console.WriteLine("=======================================");
-            foreach (var p in productManager.GetByUnitPrice(5, 10))
+            foreach (var p in productManager.GetByUnitPrice(5, 10).Data)
             {
                 Console.WriteLine(p.ProductName);
             }
